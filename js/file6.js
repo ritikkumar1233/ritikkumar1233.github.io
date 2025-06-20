@@ -23,7 +23,22 @@
 //     }
 // add(4,5);
 
-const add = (a,b) => {
-        return a+b
+// const add = (a,b) => {
+//         return a+b
+//     }
+// console.log(add(4,5));
+
+// const add = (...a) => {
+//         console.log(a);
+//     }
+// console.log(add(4,5,6,7,8));
+
+// const add = (...args) => {
+//         console.log(args);
+//     }
+// add(4,5,6,7,8);
+
+const add = (...args) => {
+        console.log(args[0]);
     }
-console.log(add(4,5));
+add(4,5,6,7,8);
