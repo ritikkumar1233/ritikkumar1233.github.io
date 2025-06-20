@@ -1,3 +1,4 @@
+//  Introduction to JavaScript
 // let a=10;
 // let b=20;
 // let c=a+b;
@@ -32,5 +33,8 @@
 // a = "za"
 // console.log(a)
 
-var name = "ritik"
-console.log(name);
+// var name = "ritik"
+// console.log(name);
+
+let name = "ritik"
+console.log(`My name is ${name}`)
