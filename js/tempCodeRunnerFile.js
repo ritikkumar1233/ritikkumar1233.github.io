@@ -1,3 +1,2 @@
-function incQuantity(id) {
-//   cart = { [id]: 1 };
-// }
+incQuantity(4)
+console.log(cart)
