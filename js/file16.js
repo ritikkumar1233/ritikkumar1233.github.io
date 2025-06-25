@@ -33,17 +33,39 @@
 // .catch((err) => console.log(err));
 
 
-function f1(a){
-    return new Promise((resolve, reject)=>{
-        if(a<0){
-            reject("Invalid input");
-        }
-        else{
-            resolve(a)
-        }
-    })
-}
+// function f1(a){
+//     return new Promise((resolve, reject)=>{
+//         if(a<0){
+//             reject("Invalid input");
+//         }
+//         else{
+//             resolve(a)
+//         }
+//     })
+// }
 
-f1(-5)
-.then((n) => console.log(n))
-.catch((err) => console.log(err));
+// f1(-5)
+// .then((n) => console.log(n))
+// .catch((err) => console.log(err));
+
+
+// fetch("https://jsonplaceholder.typicode.com/users")
+// .then((res) => res.json())
+// .then((data) => {
+//     data.map((value)=>{
+//         console.log(value.name)
+//     })
+// })
+// .catch((err) => console.log(err));
+
+
+//  fetch and res.json() return promise
+const fetchData = async () => {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+    const data = await res.json();
+    data.map((value)=>{
+        console.log(value.name)
+    })
+};
+
+fetchData();
