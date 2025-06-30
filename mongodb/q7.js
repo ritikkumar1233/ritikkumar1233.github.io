@@ -187,3 +187,95 @@ db.studentInfo.aggregate([
     {$group: {_id:{name: "$name" ,marks: "$marks.term"}, AvgScore: {$avg: "$marks.score"}}},
     {$sort: {name: 1}}
 ]);
+
+
+db.employees.aggregate([
+    {
+        $project:{_id:0, name:1, salary:1}
+    }
+])
+
+db.employees.aggregate([
+    {
+        $project:{_id:0, name:1, salary:1, grade:"A"}
+    }
+])
+
+
+db.employees.aggregate([
+    {
+        $project:{_id:0, name:1, salary:1, Grade:{$cond:[{$gt:["$salary", 2000]}, "Grade A", "Grade B"]}}
+    }
+])
+
+db.employees.aggregate([
+    {
+        $project:{
+            _id:0,
+            name:1,
+            salary:1,
+            Grade:{$cond:{
+                if:{$gt:["$salary",2000]},
+                then: "Grade A",
+                else: "Grade B"
+            }}
+        }
+    }
+])
+
+
+db.employees.aggregate([
+    {
+        $project:{
+            _id:0,
+            name:1,
+            salary:1,
+            Grade:{$cond:{
+                if:{$gt:["$salary",2000]},
+                then: "Grade A",
+                else: "Grade B"
+            }}
+        }
+    },
+    {
+        $out:"GradeWiseSalary"
+    }
+])
+
+db.createView("viename", "collectionnsme", [query])
+
+db.createView("salaryView","employees",[
+    {
+        $project:{
+            _id:0,
+            name:1,
+            salary:1,
+            Grade:{$cond:{
+                if:{$gt:["$salary",2000]},
+                then: "Grade A",
+                else: "Grade B"
+            }}
+        }
+    }
+])
+
+//  To add new fied in salaryView first we have to drop previous collection then again we have to run command with added field
+
+db.createView("salaryView","employees",[
+    {
+        $project:{
+            _id:0,
+            name:1,
+            department:1,
+            salary:1,
+            Grade:{$cond:{
+                if:{$gt:["$salary",2000]},
+                then: "Grade A",
+                else: "Grade B"
+            }},
+        }
+    }
+])
+
+
+
