@@ -43,3 +43,15 @@ Secondary will start, can read but cannot write
 db.getMongo().setReadPref("secondary")  //or rs.secondaryOk()
 use mytestdb
 db.customers.find() – will work now
+
+
+
+
+mongosh --port 27018
+use admin
+db.shutdownServer()
+
+mongosh --port 27019
+you can change in database
+
+rs.initiate({_id:"rs1",members:[{_id:0,host:"127.0.0.1:27018"},{_id:1,host:"127.0.0.1:27019"},{_id:2,host:"127.0.0.1:27020"}]})
