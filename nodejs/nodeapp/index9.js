@@ -27,7 +27,7 @@ const users = [
 
 app.use(express.json());
 app.post("/login", (req, res)=>{
-    const {email, password} = req.body();
+    const {email, password} = req.body;
     const found = users.find(
         (user)=>user.email === email && user.password === password
     );
