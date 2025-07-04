@@ -43,6 +43,17 @@ const authenticate = (req, res, next)=>{
     // next();
 };
 
+const authorize = (role) =>{
+    return (req, res, next) =>{
+        if(req.role === role){
+            next()
+        }
+        else{
+            res.json({message: "Access Denied"})
+        }
+    };
+}
+
 app.post("/login", (req, res)=>{
     const {email, password} = req.body;
     const found = users.find(
@@ -58,6 +69,6 @@ app.post("/login", (req, res)=>{
 })
 
 
-app.get("/users", authenticate ,(req, res)=>{
+app.get("/users", authenticate, authorize("admin"),(req, res)=>{
     res.json(users);
 })
