@@ -2,6 +2,7 @@
 
 import express from 'express'
 import jwt from 'jsonwebtoken'
+import bcrpyt from 'bcrypt'
 
 const app = express();
 const SECRET = "sometext";
@@ -49,7 +50,7 @@ const authorize = (role) =>{
             next()
         }
         else{
-            res.json({message: "Access Denied"})
+            return res.json({message: "Access Denied"})
         }
     };
 }
@@ -72,3 +73,27 @@ app.post("/login", (req, res)=>{
 app.get("/users", authenticate, authorize("admin"),(req, res)=>{
     res.json(users);
 })
+
+// give register user and encrypt password make admin and user
+
+app.post("/register", (req, res)=>{
+    const {name, email, password, role} = req.body;
+    
+
+})
+
+
+// const authorize = (role) =>{
+//     return (req, res, next) =>{
+//         if(req.role === role){
+//             next()
+//         }
+//         else{
+//             return res.json({message: "Access Denied"})
+//         }
+//     };
+// }
+
+// app.get("/users", authenticate, authorize("admin"),(req, res)=>{
+//     res.json(users);
+// })
