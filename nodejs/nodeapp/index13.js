@@ -51,7 +51,11 @@ app.post("/login", async(req, res)=>{
         if(existingUser){
             const isMatch = await bcrypt.compare(password, existingUser.password)
             if(isMatch){
-                const userObj = {userName:existingUser.userName, email:existingUser.email, role:existingUser.role}
+                const userObj = {
+                    userName:existingUser.userName, 
+                    email:existingUser.email, 
+                    role:existingUser.role
+                }
                 const token = jwt.sign(userObj, SECRET, {expiresIn: "1h"});
                 res.status(200).json({user: userObj, token});
             }
@@ -66,5 +70,19 @@ app.post("/login", async(req, res)=>{
     catch(err){
         console.log(err);
         res.status(500).json({message: "something went wrong"})
+    }
+})
+
+app.post('/update/:email', (req, res)=>{
+    try{
+        const id = req.params.email;
+        const update = userModel.updateOne({email: id},{$set:{role: "admin"}});
+        res.json({message: update})
+
+
+    }
+    catch(err){
+        console.log(err);
+        res.status(500).json({message: "Something went wrong"})
     }
 })
