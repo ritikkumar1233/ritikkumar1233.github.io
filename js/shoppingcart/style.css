@@ -1,0 +1,29 @@
+.container{
+    width: 900px;
+    margin: auto;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.header li{
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+}
+
+.row{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.row div{
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 10px;
+}
