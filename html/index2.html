@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Form Tags</h1>
+    <form>
+        <label for="name">Enter Your name:</label>
+        <input type="text" id="name" autofocus placeholder="Enter Name" name="name" required>
+        <br/><br/>
+        <input type="text" value="Ritik" readonly>
+        <br/><br/>
+        <input type="text" value="Ritik" disabled>
+        <br/><br/>
+        <input type="text" maxlength="5" size="25px">
+        <br/><br/>
+        <button>Submit</button>
+        <input type="submit" value="Done">
+        <input type="reset" value="reset">
+        <!-- <input type="image" src="spider.jpg"> -->
+         <br/><br/>
+    </form>
+    <fieldset>
+        <legend>Login Form</legend>
+            <form>
+                <input type="text" placeholder="Enter email">
+                <br/><br/>
+                <input type="text" placeholder="Enter Password">
+            </form>
+    </fieldset>
+    <br/>
+    <fieldset>
+        <legend>Registration Form</legend>
+        <input type="checkbox">Java
+        <input type="checkbox">Mern
+        <input type="checkbox">Python
+        <br/><br/>
+        <input type="radio" name="batch">Morning Batch
+        <input type="radio" name="batch">Evening batch
+        <br/><br/>
+        <select>
+            <optgroup label="India">
+                <option>Delhi</option>
+                <option>Patna</option>
+                <option>Noida</option>
+            </optgroup>
+            <optgroup label="USA">
+                <option>Miami</option>
+                <option>Columbus</option>
+                <option>Los Angles</option>
+            </optgroup>
+        </select>
+        <br/><br/>
+        <textarea rows="4" cols="50" placeholder="About me"></textarea>
+        <br/><br/>
+        <input type="date">
+        <br/><br/>
+        <input type="file">
+        <br/><br/>
+        <input type="color">
+        <br/><br/>
+        <input list="countary">
+        <datalist id="countary">
+            <option>India</option>
+            <option>USA</option>
+            <option>France</option>
+        </datalist>
+        <br/><br/>
+        <label for="chk">Remember me</label>
+        <input type="checkbox" id="chk">
+        <br/><br/>
+        <button>Register</button>
+    </fieldset>
+</body>
+</html>
