@@ -4,11 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        /* p{
+            width: 50%;
+        }
+        .container{
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        @media (max-width: 768px){
+            .container{
+                flex-direction: column;
+                background-color: bisque;
+            }
+        }
+        .box{
+            flex: 1;
+            min-width: 200px;
+        }
+        .img-box{
+            width: 80%;
+            height: auto;
+        }
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        body{
+            font-size: 1rem;
+        }
+        h1{
+            font-size: 5rem;
+            font-size: clamp(0.5rem, 5vw, 5rem);
+        }  */
+        .container{
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+            background-color: lightslategray;
+            align-items: center;
+        }
+        .navbar{
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            padding: 40px;
+        }
+        .box{
+            background-color: lightgreen;
+            border-radius: 2px;
+            cursor: pointer;
+            color: red;
+        }
+        .log{
+            padding: 20px;
+        }
+        @media (max-width: 600px){
+            .container{
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+            .navbar{
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+        }
+    </style>
 </head>
 <body>
     <h1>Responsive Design</h1>
-    <p>
+    
+    <div class="container">
+        <div class="log">
+            <img src="logo.png" height="80px" width="80px" alt="logo">
+    </div>
+        <div class="navbar">
+            <div class="box">Home</div>
+            <div class="box">Service</div>
+            <div class="box">Work</div>
+            <div class="box">About</div>
+            <div class="box">Contact</div>
+        </div>
+    </div>
+    <!-- <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae ducimus explicabo ex libero distinctio odio eaque debitis pariatur! Sed unde cupiditate nobis repellat ex inventore perferendis, minima blanditiis corrupti vitae facere excepturi. Deserunt vel sequi aliquam iste recusandae, voluptas quam rem quas officia aperiam dolore tempora esse quia! Fuga, non, quisquam natus similique ratione impedit nemo quae alias quasi blanditiis veniam et? Praesentium, natus ipsam molestiae quasi omnis officia, eum rerum tempore dolorem, atque et debitis dignissimos pariatur libero totam quae dolor quam. Eligendi, repudiandae itaque aliquam illo obcaecati quo veritatis nemo laborum excepturi cumque doloremque voluptatum, voluptatibus accusantium velit.
     </p>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
+    <div class="img-box">
+        <img src="ritik2.jpg" >
+    </div> -->
 </body>
 </html>
