@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* li{
+            display: inline;
+            width: 500px;
+            background-color: bisque;
+        } */
+        /* li{
+            display: block;
+            width: 300px;
+            background-color: red;
+        } */
+        li{
+            display: inline-block;
+            width: 100px;
+            /* background-color: red; */
+        }
+        .flex{
+            display: flex;
+            justify-content: flex-end;
+            background-color: yellow;
+            height: 80px;
+            gap: 10px;
+            padding: 10px;
+            align-items: center;
+            /* padding: 20px; */
+            /* align-items: center; */
+            /* flex-wrap: wrap; */
+            /* flex-direction: row; */
+        }
+        .flex div{
+           /* text-align: center; */
+           padding: 8px 12px;
+           cursor: pointer;
+        }
+        .flex div:hover{
+            color: blueviolet;
+        }
+        .grid{
+            display: grid;
+            background-color: pink;
+            grid-template-columns: auto auto auto auto;
+            /* grid-template-columns: 100px 200px 300px 400px; */
+            /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+            /* grid-template-columns: repeat(4, 1fr); */
+            column-gap: 10px;
+            row-gap: 20px;
+            justify-content: space-around;
+            align-items: center;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>css display property</h1>
+    <h2>inline vs inline-block</h2>
+    <div class="list">
+        <li>Home</li>
+        <li>About</li>
+        <li>Work</li>
+        <li>Contact</li>
+    </div>
+    <hr>
+    <h2>Flexbox</h2>
+    <div class="flex">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+    </div>
+    <hr>
+    <h2>Grid</h2>
+    <div class="grid">
+        <div>box1</div>
+        <div>box2</div>
+        <div>box3</div>
+        <div>box4</div>
+        <div>box5</div>
+        <div>box6</div>
+    </div>
+</body>
+</html>
